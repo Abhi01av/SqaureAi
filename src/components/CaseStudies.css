@@ -1,0 +1,44 @@
+.case-studies { background: var(--body-bg); }
+.case-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+
+.case-card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+  overflow: hidden; transition: all var(--transition);
+}
+.case-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+
+.case-header { height: 160px; position: relative; }
+.case-header::after {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+}
+
+.case-body { padding: 28px 28px 24px; }
+
+.industry-tag {
+  display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--electric-blue);
+  background: rgba(24, 95, 165, 0.08); border: 1px solid rgba(24, 95, 165, 0.2);
+  padding: 4px 10px; border-radius: 100px; margin-bottom: 14px;
+}
+.industry-tag--health { color: #0ea5e9; background: rgba(14, 165, 233, 0.08); border-color: rgba(14, 165, 233, 0.2); }
+.industry-tag--retail { color: #22c55e; background: rgba(34, 197, 94, 0.08); border-color: rgba(34, 197, 94, 0.2); }
+
+.case-body h3 { font-size: 18px; font-weight: 700; color: var(--text-primary); line-height: 1.3; margin-bottom: 10px; }
+.case-body p { font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 20px; }
+
+.case-metric {
+  display: flex; align-items: baseline; gap: 10px; background: linear-gradient(135deg, #f0f8ff, #e8f4fb);
+  border-radius: 10px; padding: 14px 18px; margin-bottom: 20px; border: 1px solid rgba(55, 138, 221, 0.15);
+}
+.metric-num { font-size: 28px; font-weight: 900; color: var(--electric-blue); letter-spacing: -0.03em; }
+.metric-label { font-size: 12px; color: var(--text-secondary); line-height: 1.4; }
+
+.case-cta {
+  display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600;
+  color: var(--electric-blue); transition: gap var(--transition);
+}
+.case-cta:hover { gap: 10px; color: var(--sky-blue); }
+
+@media (max-width: 1024px) { .case-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 768px) { .case-grid { grid-template-columns: 1fr; } }

@@ -1,0 +1,92 @@
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.logo-icon-container {
+  position: relative;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+/* Sizing */
+.logo-small .logo-icon-container { width: 32px; height: 32px; }
+.logo-medium .logo-icon-container { width: 44px; height: 44px; }
+.logo-large .logo-icon-container { width: 60px; height: 60px; }
+
+.outer-sq {
+  position: absolute;
+  inset: 0;
+  border: 2px solid #185FA5;
+  border-radius: 8px;
+}
+
+.inner-diamond {
+  position: absolute;
+  width: 40%;
+  height: 40%;
+  background: #185FA5;
+  border-radius: 20%;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.icon-dot {
+  position: absolute;
+  width: 15%;
+  height: 15%;
+  background: #E24B4A;
+  border-radius: 50%;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.tick { position: absolute; background: #378ADD; border-radius: 1px; opacity: 0.8; }
+.tick-t { width: 1px; height: 18%; top: -15%; left: 50%; transform: translateX(-50%); }
+.tick-b { width: 1px; height: 18%; bottom: -15%; left: 50%; transform: translateX(-50%); }
+.tick-l { height: 1px; width: 18%; left: -15%; top: 50%; transform: translateY(-50%); }
+.tick-r { height: 1px; width: 18%; right: -15%; top: 50%; transform: translateY(-50%); }
+
+.corner-dot { position: absolute; width: 8%; height: 8%; background: #378ADD; border-radius: 50%; }
+.cd-tl { top: 8%; left: 8%; }
+.cd-tr { top: 8%; right: 8%; }
+.cd-bl { bottom: 8%; left: 8%; }
+.cd-br { bottom: 8%; right: 8%; }
+
+.logo-text-container {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.logo-name {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.4em;
+  margin-bottom: 2px;
+}
+
+.logo-small .logo-name { font-size: 14px; }
+.logo-medium .logo-name { font-size: 20px; }
+
+.n-dot { color: var(--white, #042C53); font-weight: 300; letter-spacing: -0.5px; }
+.n-sq  { color: var(--sky-blue, #185FA5); font-weight: 800; letter-spacing: -0.3px; }
+
+.logo-sub {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.45em;
+  letter-spacing: 0.3em;
+  color: var(--sky-blue, #378ADD);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.logo-small .logo-sub { font-size: 6px; }
+.logo-medium .logo-sub { font-size: 8px; }
+
+/* Navbar/Footer context adjustments */
+.hero-warm .n-dot { color: #042C53; }
+.hero-warm .n-sq { color: #185FA5; }
+

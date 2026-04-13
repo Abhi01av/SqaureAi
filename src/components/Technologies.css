@@ -1,0 +1,28 @@
+.technologies { background: linear-gradient(180deg, #f0f6ff 0%, #f8fafc 100%); }
+.tech-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px; }
+
+.tech-card {
+  display: flex; flex-direction: column; align-items: center; gap: 12px;
+  padding: 20px 16px; background: var(--white); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); transition: all var(--transition);
+}
+.tech-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-card); border-color: rgba(55, 138, 221, 0.3); }
+
+.tech-logo-wrapper {
+  width: 64px; height: 64px; border-radius: 12px; border: 1px solid transparent;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  background: var(--navy-mid); overflow: hidden;
+}
+
+.aws-tech-logo { display: flex; flex-direction: column; align-items: center; line-height: 1; }
+.aws-txt { font-family: Arial Black; font-size: 14px; font-weight: 900; color: var(--aws-orange); }
+.sub-txt { font-size: 9px; color: #fff; opacity: 0.8; margin-top: 4px; }
+
+.tech-txt-logo { font-weight: 700; font-size: 11px; text-align: center; }
+.tech-txt-logo .emoji { font-size: 24px; }
+
+.tech-card span { font-size: 12px; font-weight: 600; color: var(--text-secondary); }
+
+@media (max-width: 1024px) { .tech-grid { grid-template-columns: repeat(4, 1fr); } }
+@media (max-width: 768px) { .tech-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 480px) { .tech-grid { grid-template-columns: repeat(2, 1fr); } }

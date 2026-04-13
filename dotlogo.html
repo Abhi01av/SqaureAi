@@ -1,0 +1,199 @@
+
+<h2 class="sr-only">Animated logo for Dot Square Automation — red dot grows big then disappears, logo reveals</h2>
+
+<style>
+  #stage {
+    background: #ffffff;
+    width: 100%;
+    height: 400px;
+    border-radius: 16px;
+    border: 0.5px solid #e0e0e0;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #dot {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #E24B4A;
+    animation: burst 2.8s cubic-bezier(0.25,0.1,0.25,1) forwards;
+  }
+
+  @keyframes burst {
+    0%   { transform: scale(0);  opacity: 0; }
+    8%   { transform: scale(1);  opacity: 1; }
+    38%  { transform: scale(32); opacity: 1; }
+    65%  { transform: scale(0.6); opacity: 1; }
+    80%  { transform: scale(0);  opacity: 0; }
+    100% { transform: scale(0);  opacity: 0; }
+  }
+
+  #logo {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards 2.6s;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  #icon {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .outer-sq {
+    position: absolute;
+    inset: 0;
+    border: 2.5px solid #185FA5;
+    border-radius: 16px;
+  }
+
+  .inner-diamond {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    background: #185FA5;
+    border-radius: 6px;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  .icon-dot {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: #E24B4A;
+    border-radius: 50%;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    animation: pulse 2s ease-in-out infinite 3.6s;
+  }
+
+  @keyframes pulse {
+    0%,100% { transform: translate(-50%,-50%) scale(1); }
+    50%      { transform: translate(-50%,-50%) scale(1.35); }
+  }
+
+  .tick { position: absolute; background: #378ADD; border-radius: 2px; }
+  .tick-t { width: 1.5px; height: 10px; top: -12px; left: 50%; transform: translateX(-50%); }
+  .tick-b { width: 1.5px; height: 10px; bottom: -12px; left: 50%; transform: translateX(-50%); }
+  .tick-l { height: 1.5px; width: 10px; left: -12px; top: 50%; transform: translateY(-50%); }
+  .tick-r { height: 1.5px; width: 10px; right: -12px; top: 50%; transform: translateY(-50%); }
+
+  .corner-dot { position: absolute; width: 5px; height: 5px; background: #378ADD; border-radius: 50%; }
+  .cd-tl { top: 3px; left: 3px; }
+  .cd-tr { top: 3px; right: 3px; }
+  .cd-bl { bottom: 3px; left: 3px; }
+  .cd-br { bottom: 3px; right: 3px; }
+
+  #text-block { display: flex; flex-direction: column; gap: 4px; }
+
+  #name-row {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 40px;
+    line-height: 1;
+  }
+
+  .n-dot { color: #042C53; font-weight: 200; letter-spacing: -1px; }
+  .n-sq  { color: #185FA5; font-weight: 700; letter-spacing: -0.5px; }
+
+  #sub-row {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 11.5px;
+    letter-spacing: 6px;
+    color: #378ADD;
+    font-weight: 400;
+    padding-left: 2px;
+  }
+
+  #divider { width: 100%; height: 0.8px; background: #B5D4F4; margin: 6px 0; }
+
+  #badges { display: flex; gap: 7px; }
+
+  .bdg {
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    padding: 3px 9px;
+    border-radius: 20px;
+    border: 1px solid;
+  }
+  .bdg-aws { color: #854F0B; border-color: #FF9900; background: #FFF8ED; }
+  .bdg-ai  { color: #185FA5; border-color: #378ADD; background: #EBF4FD; }
+
+  #replay {
+    position: absolute;
+    bottom: 14px; right: 14px;
+    background: #f4f6f9;
+    border: 0.5px solid #cdd5e0;
+    color: #185FA5;
+    font-size: 11px;
+    padding: 5px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    letter-spacing: 0.4px;
+  }
+  #replay:hover { background: #e8eef7; }
+</style>
+
+<div id="stage">
+  <div id="dot"></div>
+
+  <div id="logo">
+    <div id="icon">
+      <div class="outer-sq"></div>
+      <div class="inner-diamond"></div>
+      <div class="icon-dot"></div>
+      <div class="tick tick-t"></div>
+      <div class="tick tick-b"></div>
+      <div class="tick tick-l"></div>
+      <div class="tick tick-r"></div>
+      <div class="corner-dot cd-tl"></div>
+      <div class="corner-dot cd-tr"></div>
+      <div class="corner-dot cd-bl"></div>
+      <div class="corner-dot cd-br"></div>
+    </div>
+
+    <div id="text-block">
+      <div id="name-row">
+        <span class="n-dot">dot</span><span class="n-sq">square</span>
+      </div>
+      <div id="sub-row">AUTOMATION</div>
+      <div id="divider"></div>
+      <div id="badges">
+        <span class="bdg bdg-aws">▲ AWS Partner</span>
+        <span class="bdg bdg-ai">AI Services</span>
+      </div>
+    </div>
+  </div>
+
+  <button id="replay" onclick="replayAnim()">↺ replay</button>
+</div>
+
+<script>
+  function replayAnim() {
+    const dot  = document.getElementById('dot');
+    const logo = document.getElementById('logo');
+    dot.style.animation  = 'none';
+    logo.style.animation = 'none';
+    void dot.offsetWidth;
+    void logo.offsetWidth;
+    dot.style.animation  = 'burst 2.8s cubic-bezier(0.25,0.1,0.25,1) forwards';
+    logo.style.animation = 'fadeIn 1s ease forwards 2.6s';
+  }
+</script>
