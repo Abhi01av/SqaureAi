@@ -5,34 +5,23 @@
   text-decoration: none;
 }
 
-/* Image container — crops the JPEG to show only the dot-matrix square icon,
-   hiding the "DOT SQUARE AUTOMATION PRIVATE LIMITED" text below it.
-   The icon occupies roughly the top 55% of the source image.
-   We render the image at ~182% of the container height so the
-   container's overflow:hidden clips everything below the icon. */
 .logo-img-container {
-  position: relative;
   flex-shrink: 0;
-  overflow: hidden;
-  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.logo-img-small  { width: 34px; height: 34px; }
-.logo-img-medium { width: 46px; height: 46px; }
-.logo-img-large  { width: 64px; height: 64px; }
+.logo-img-small  { width: 40px; height: 40px; }
+.logo-img-medium { width: 52px; height: 52px; }
+.logo-img-large  { width: 72px; height: 72px; }
 
 .logo-img {
-  position: absolute;
-  /* Render the image larger than the container so the full image height
-     corresponds to the icon height fitting the container. */
-  width: 182%;
-  height: 182%;
-  left: 50%;
-  top: 0;
-  transform: translateX(-50%);
-  object-fit: cover;
-  object-position: top center;
+  width: 100%;
+  height: 100%;
   display: block;
+  object-fit: contain;
+  filter: drop-shadow(0 0 6px rgba(0, 170, 255, 0.35)) saturate(1.3);
 }
 
 /* Text beside the logo mark */
@@ -50,6 +39,9 @@
 
 .logo-small  .logo-name { font-size: 14px; }
 .logo-medium .logo-name { font-size: 20px; }
+
+.navbar .n-dot { color: rgba(255, 255, 255, 0.90); }
+.navbar .n-sq  { color: #4da2ff; }
 
 .n-dot { color: var(--text-primary); font-weight: 300; letter-spacing: -0.5px; }
 .n-sq  { color: var(--electric-blue); font-weight: 800; letter-spacing: -0.3px; }
