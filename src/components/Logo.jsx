@@ -1,13 +1,11 @@
-import React from 'react';
+import logoImg from '../assests/logonew.jpeg';
 import './Logo.css';
 
 const Logo = ({ size = "medium", hideText = false }) => {
   return (
     <div className={`logo-wrapper logo-${size}`}>
-      <div className="logo-icon-container">
-        <div className="outer-sq"></div>
-        <div className="inner-diamond"></div>
-        <div className="icon-dot"></div>
+      <div className={`logo-img-container logo-img-${size}`}>
+        <img src={logoImg} alt="Dot Square Automation" className="logo-img" />
       </div>
 
       {!hideText && (
@@ -15,7 +13,6 @@ const Logo = ({ size = "medium", hideText = false }) => {
           <div className="logo-name">
             <span className="n-dot">dot</span><span className="n-sq">square</span>
           </div>
-          <div className="logo-sub">AUTOMATION</div>
         </div>
       )}
     </div>

@@ -1,30 +1,26 @@
-import Navbar from './components/Navbar.jsx'
-import Hero from './components/Hero.jsx'
-import Marquee from './components/Marquee.jsx'
-import Services from './components/Services.jsx'
-import WhyUs from './components/WhyUs.jsx'
-import HowItWorks from './components/HowItWorks.jsx'
-import Technologies from './components/Technologies.jsx'
-import CaseStudies from './components/CaseStudies.jsx'
-import Testimonials from './components/Testimonials.jsx'
-import CtaBanner from './components/CtaBanner.jsx'
-import Footer from './components/Footer.jsx'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar'
+import Footer from './components/Footer'
+import HomePage from './pages/HomePage'
+import ServicesPage from './pages/ServicesPage'
+import AboutPage from './pages/AboutPage'
+import CaseStudiesPage from './pages/CaseStudiesPage'
+import './index.css'
 
 function App() {
   return (
-    <>
+    <Router>
       <Navbar />
-      <Hero />
-      <Marquee />
-      <Services />
-      <WhyUs />
-      <HowItWorks />
-      <Technologies />
-      <CaseStudies />
-      <Testimonials />
-      <CtaBanner />
+      <main>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/case-studies" element={<CaseStudiesPage />} />
+        </Routes>
+      </main>
       <Footer />
-    </>
+    </Router>
   )
 }
 

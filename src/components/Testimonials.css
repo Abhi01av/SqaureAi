@@ -3,7 +3,9 @@
 .testimonial-track { min-height: 300px; position: relative; overflow: hidden; }
 
 .testimonial-card {
-  background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border); border-radius: var(--radius-lg);
   padding: 40px 48px; display: none; box-shadow: var(--shadow-md);
   max-width: 860px; margin: 0 auto; position: relative;
 }

@@ -1,4 +1,5 @@
-import Logo from './Logo';
+import { Link } from 'react-router-dom';
+import Logo from './Logo.jsx';
 import './Footer.css';
 
 const Footer = () => {
@@ -7,9 +8,9 @@ const Footer = () => {
       <div className="container">
         <div className="footer-top">
           <div className="footer-brand">
-            <a href="#" className="nav-logo footer-logo">
+            <Link to="/" className="nav-logo footer-logo">
               <Logo size="small" />
-            </a>
+            </Link>
             <p className="footer-tagline">Intelligent automation for the enterprise. Powered by AI. Built on AWS.</p>
             <div className="footer-aws-badge">
               <svg width="32" height="20" viewBox="0 0 40 20">
@@ -22,19 +23,19 @@ const Footer = () => {
           <div className="footer-links-group">
             <h4>Services</h4>
             <ul>
-              <li><a href="#">Custom AI Development</a></li>
-              <li><a href="#">Generative AI & LLMs</a></li>
-              <li><a href="#">AWS Cloud AI</a></li>
-              <li><a href="#">Process Automation</a></li>
-              <li><a href="#">MLOps & DataEng</a></li>
+              <li><Link to="/services">Custom AI Development</Link></li>
+              <li><Link to="/services">Generative AI & LLMs</Link></li>
+              <li><Link to="/services">AWS Cloud AI</Link></li>
+              <li><Link to="/services">Process Automation</Link></li>
+              <li><Link to="/services">MLOps & DataEng</Link></li>
             </ul>
           </div>
 
           <div className="footer-links-group">
             <h4>Company</h4>
             <ul>
-              <li><a href="#why-us">About Us</a></li>
-              <li><a href="#case-studies">Case Studies</a></li>
+              <li><Link to="/about">About Us</Link></li>
+              <li><Link to="/case-studies">Case Studies</Link></li>
               <li><a href="#">Blog</a></li>
               <li><a href="#contact">Contact</a></li>
               <li><a href="#">Careers</a></li>

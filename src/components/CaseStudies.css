@@ -2,8 +2,11 @@
 .case-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
 
 .case-card {
-  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border); border-radius: var(--radius);
   overflow: hidden; transition: all var(--transition);
+  box-shadow: var(--shadow-sm);
 }
 .case-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
 

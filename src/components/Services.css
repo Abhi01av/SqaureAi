@@ -2,13 +2,15 @@
 .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 
 .service-card {
-  background: var(--surface);
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(10px);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 36px 30px 28px;
   transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
   position: relative;
   overflow: hidden;
+  box-shadow: var(--shadow-sm);
 }
 
 .service-card::before {

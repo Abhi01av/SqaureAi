@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 import Logo from './Logo';
 import './Navbar.css';
 
@@ -14,19 +15,22 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const closeMenu = () => setIsOpen(false);
+
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`} id="navbar">
       <div className="nav-container">
-        <a href="#" className="nav-logo">
+        <Link to="/" className="nav-logo" onClick={closeMenu}>
           <Logo size="small" />
-        </a>
+        </Link>
+        
         <ul className={`nav-links ${isOpen ? 'open' : ''}`} id="navLinks">
-          <li><a href="#services" onClick={() => setIsOpen(false)}>Services</a></li>
-          <li><a href="#why-us" onClick={() => setIsOpen(false)}>About</a></li>
-          <li><a href="#case-studies" onClick={() => setIsOpen(false)}>Case Studies</a></li>
-          <li><a href="#technologies" onClick={() => setIsOpen(false)}>Technologies</a></li>
-          <li><a href="#contact" className="nav-cta" onClick={() => setIsOpen(false)}>Get Started</a></li>
+          <li><NavLink to="/services" onClick={closeMenu}>Services</NavLink></li>
+          <li><NavLink to="/about" onClick={closeMenu}>About</NavLink></li>
+          <li><NavLink to="/case-studies" onClick={closeMenu}>Case Studies</NavLink></li>
+          <li><a href="#contact" className="nav-cta" onClick={closeMenu}>Get Started</a></li>
         </ul>
+
         <button 
           className={`hamburger ${isOpen ? 'active' : ''}`} 
           id="hamburger" 
@@ -39,5 +43,6 @@ const Navbar = () => {
     </nav>
   );
 };
+
 
 export default Navbar;

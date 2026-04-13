@@ -1,7 +1,7 @@
 .marquee-section {
-  background: linear-gradient(to right, var(--navy), #0d2040, var(--navy));
-  border-top: 1px solid rgba(55, 138, 221, 0.15);
-  border-bottom: 1px solid rgba(55, 138, 221, 0.15);
+  background: linear-gradient(to right, rgba(31, 111, 191, 0.08), rgba(255, 159, 45, 0.08), rgba(31, 111, 191, 0.08));
+  border-top: 1px solid rgba(31, 111, 191, 0.12);
+  border-bottom: 1px solid rgba(31, 111, 191, 0.12);
   padding: 18px 0;
   overflow: hidden;
 }
@@ -10,8 +10,8 @@
 .marquee-track::before, .marquee-track::after {
   content: ''; position: absolute; top: 0; bottom: 0; width: 100px; z-index: 1;
 }
-.marquee-track::before { left: 0; background: linear-gradient(to right, var(--navy), transparent); }
-.marquee-track::after { right: 0; background: linear-gradient(to left, var(--navy), transparent); }
+.marquee-track::before { left: 0; background: linear-gradient(to right, rgba(246, 248, 252, 0.92), transparent); }
+.marquee-track::after { right: 0; background: linear-gradient(to left, rgba(246, 248, 252, 0.92), transparent); }
 
 .marquee-inner {
   display: flex;
@@ -24,7 +24,7 @@
 .marquee-item { display: flex; align-items: center; }
 
 .marquee-tag {
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(11, 27, 48, 0.7);
   font-size: 13px;
   font-weight: 500;
   letter-spacing: 0.04em;
@@ -32,7 +32,7 @@
 }
 
 .marquee-sep {
-  color: rgba(55, 138, 221, 0.5);
+  color: rgba(31, 111, 191, 0.35);
   font-size: 16px;
   padding: 0 10px;
 }

@@ -5,57 +5,37 @@
   text-decoration: none;
 }
 
-.logo-icon-container {
+/* Image container — crops the JPEG to show only the dot-matrix square icon,
+   hiding the "DOT SQUARE AUTOMATION PRIVATE LIMITED" text below it.
+   The icon occupies roughly the top 55% of the source image.
+   We render the image at ~182% of the container height so the
+   container's overflow:hidden clips everything below the icon. */
+.logo-img-container {
   position: relative;
   flex-shrink: 0;
-  transition: transform 0.3s ease;
+  overflow: hidden;
+  border-radius: 10px;
 }
 
-/* Sizing */
-.logo-small .logo-icon-container { width: 32px; height: 32px; }
-.logo-medium .logo-icon-container { width: 44px; height: 44px; }
-.logo-large .logo-icon-container { width: 60px; height: 60px; }
+.logo-img-small  { width: 34px; height: 34px; }
+.logo-img-medium { width: 46px; height: 46px; }
+.logo-img-large  { width: 64px; height: 64px; }
 
-.outer-sq {
+.logo-img {
   position: absolute;
-  inset: 0;
-  border: 2px solid #185FA5;
-  border-radius: 8px;
+  /* Render the image larger than the container so the full image height
+     corresponds to the icon height fitting the container. */
+  width: 182%;
+  height: 182%;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  object-fit: cover;
+  object-position: top center;
+  display: block;
 }
 
-.inner-diamond {
-  position: absolute;
-  width: 40%;
-  height: 40%;
-  background: #185FA5;
-  border-radius: 20%;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%) rotate(45deg);
-}
-
-.icon-dot {
-  position: absolute;
-  width: 15%;
-  height: 15%;
-  background: #E24B4A;
-  border-radius: 50%;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-}
-
-.tick { position: absolute; background: #378ADD; border-radius: 1px; opacity: 0.8; }
-.tick-t { width: 1px; height: 18%; top: -15%; left: 50%; transform: translateX(-50%); }
-.tick-b { width: 1px; height: 18%; bottom: -15%; left: 50%; transform: translateX(-50%); }
-.tick-l { height: 1px; width: 18%; left: -15%; top: 50%; transform: translateY(-50%); }
-.tick-r { height: 1px; width: 18%; right: -15%; top: 50%; transform: translateY(-50%); }
-
-.corner-dot { position: absolute; width: 8%; height: 8%; background: #378ADD; border-radius: 50%; }
-.cd-tl { top: 8%; left: 8%; }
-.cd-tr { top: 8%; right: 8%; }
-.cd-bl { bottom: 8%; left: 8%; }
-.cd-br { bottom: 8%; right: 8%; }
-
+/* Text beside the logo mark */
 .logo-text-container {
   display: flex;
   flex-direction: column;
@@ -68,25 +48,25 @@
   margin-bottom: 2px;
 }
 
-.logo-small .logo-name { font-size: 14px; }
+.logo-small  .logo-name { font-size: 14px; }
 .logo-medium .logo-name { font-size: 20px; }
 
-.n-dot { color: var(--white, #042C53); font-weight: 300; letter-spacing: -0.5px; }
-.n-sq  { color: var(--sky-blue, #185FA5); font-weight: 800; letter-spacing: -0.3px; }
+.n-dot { color: var(--text-primary); font-weight: 300; letter-spacing: -0.5px; }
+.n-sq  { color: var(--electric-blue); font-weight: 800; letter-spacing: -0.3px; }
 
 .logo-sub {
   font-family: 'Inter', sans-serif;
   font-size: 0.45em;
   letter-spacing: 0.3em;
-  color: var(--sky-blue, #378ADD);
+  color: var(--text-muted);
   font-weight: 600;
   text-transform: uppercase;
 }
 
-.logo-small .logo-sub { font-size: 6px; }
+.logo-small  .logo-sub { font-size: 6px; }
 .logo-medium .logo-sub { font-size: 8px; }
 
-/* Navbar/Footer context adjustments */
-.hero-warm .n-dot { color: #042C53; }
-.hero-warm .n-sq { color: #185FA5; }
-
+/* Footer context */
+.footer .n-dot { color: rgba(255, 255, 255, 0.92); }
+.footer .n-sq  { color: rgba(255, 255, 255, 0.98); }
+.footer .logo-sub { color: rgba(255, 255, 255, 0.55); }
