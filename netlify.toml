@@ -4,3 +4,6 @@
 
 [build.environment]
   NODE_VERSION = "20.19.0"
+  # Ensure Rollup's platform-specific optional dependency is installed on Netlify.
+  # Fixes: "Cannot find module @rollup/rollup-linux-x64-gnu"
+  NPM_FLAGS = "--include=optional"
