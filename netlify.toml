@@ -1,7 +1,7 @@
 [build]
   # Run an explicit install during the build so Linux-only optional deps (Rollup native)
   # are present even when `package-lock.json` was generated on macOS.
-  command = "npm install --include=optional --no-audit --no-fund && npm run build"
+  command = "rm -rf node_modules && rm -f package-lock.json && npm install --include=optional --no-audit --no-fund && npm run build"
   publish = "dist"
 
 [build.environment]
