@@ -12,9 +12,9 @@
   justify-content: center;
 }
 
-.logo-img-small  { width: 40px; height: 40px; }
-.logo-img-medium { width: 52px; height: 52px; }
-.logo-img-large  { width: 72px; height: 72px; }
+.logo-img-small  { width: 50px; height: 50px; }
+.logo-img-medium { width: 60px; height: 60px; }
+.logo-img-large  { width: 80px; height: 80px; }
 
 .logo-img {
   width: 100%;
@@ -37,8 +37,8 @@
   margin-bottom: 2px;
 }
 
-.logo-small  .logo-name { font-size: 14px; }
-.logo-medium .logo-name { font-size: 20px; }
+.logo-small  .logo-name { font-size: 20px; }
+.logo-medium .logo-name { font-size: 26px; }
 
 .navbar .n-dot { color: rgba(255, 255, 255, 0.90); }
 .navbar .n-sq  { color: #4da2ff; }
