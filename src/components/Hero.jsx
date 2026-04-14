@@ -24,12 +24,6 @@ const Hero = () => {
             <a href="#contact" className="btn-warm-primary">Start Your Transformation</a>
             <a href="#services" className="btn-warm-outline">Explore Our Solutions</a>
           </div>
-          <div className="aws-trust-pill">
-            <svg width="24" height="16" viewBox="0 0 40 24" fill="#854F0B">
-              <text x="0" y="18" fontFamily="Arial Black" fontSize="14" fontWeight="900">aws</text>
-            </svg>
-            <span>Advanced Tier Service Partner</span>
-          </div>
         </div>
 
         {/* ── RIGHT: visual panel ── */}

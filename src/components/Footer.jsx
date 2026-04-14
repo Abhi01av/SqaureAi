@@ -12,12 +12,12 @@ const Footer = () => {
               <Logo size="small" />
             </Link>
             <p className="footer-tagline">Intelligent automation for the enterprise. Powered by AI. Built on AWS.</p>
-            <div className="footer-aws-badge">
+            {/* <div className="footer-aws-badge">
               <svg width="32" height="20" viewBox="0 0 40 20">
                 <text x="0" y="16" fontFamily="Arial Black" fontSize="12" fontWeight="900" fill="#FF9900">aws</text>
               </svg>
               <span>Certified Partner</span>
-            </div>
+            </div> */}
           </div>
 
           <div className="footer-links-group">

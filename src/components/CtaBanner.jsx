@@ -25,10 +25,10 @@ const CtaBanner = () => {
           <h2>Ready to Automate Your Future?</h2>
           <p>Let's discuss your AI goals. Our experts will craft a tailored strategy for your business in a free, no-obligation discovery session.</p>
           <div className="cta-actions">
-            <a href="mailto:hello@dotsquareautomation.com" className="btn btn-primary btn-lg">Book a Free Discovery Call</a>
+            <a href="mailto:contact@dotsquareai.com" className="btn btn-primary btn-lg">Book a Free Discovery Call</a>
             <div className="cta-contact-info">
               <span>or reach us at</span>
-              <a href="mailto:hello@dotsquareautomation.com">hello@dotsquareautomation.com</a>
+              <a href="mailto:contact@dotsquareai.com">contact@dotsquareai.com</a>
             </div>
           </div>
         </div>
