@@ -1,98 +1,101 @@
+import { lazy, Suspense } from 'react';
 import './Hero.css';
+const HeroScene = lazy(() => import('./HeroScene'));
+
+const features = [
+  {
+    title: 'Tailored AI Solutions',
+    desc: 'AI systems engineered to fit your exact workflow and business objectives.',
+  },
+  {
+    title: 'Fast Implementation',
+    desc: 'Deploy automation and AI tools in weeks, not months.',
+  },
+  {
+    title: 'Measurable Impact',
+    desc: 'ROI-focused approach backed by real metrics and clear KPIs.',
+  },
+];
+
+const avatars = ['MR', 'SA', 'JP', 'KL'];
 
 const Hero = () => {
   return (
-    <section className="hero-warm" id="hero">
-      <div className="hero-layout">
+    <section className="hero" id="hero">
 
-        {/* ── LEFT: copy ── */}
-        <div className="hero-warm-content">
-          <div className="warm-badge">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-            </svg>
-            Accelerating Intelligent Success
+      {/* Warm ambient background glow */}
+      <div className="hero-ambient" aria-hidden="true" />
+
+      <div className="hero-inner">
+
+        {/* ── LEFT COLUMN ── */}
+        <div className="hero-left">
+          <div className="hero-eyebrow">
+            <span className="hero-eyebrow-dot" />
+            AI Automation · AWS Partner
           </div>
-          <h1 className="warm-headline">
-            Seamless AI Automation.<br/>
-            <span className="warm-gradient-text">For a Thriving Enterprise.</span>
+
+          <h1 className="hero-headline">
+            Accelerate Your Business<br />
+            With Strategic<br />
+            <span className="hero-headline-warm">AI Integration.</span>
           </h1>
-          <p className="warm-subheadline">
-            Dot Square empowers your business with intelligent, customized AI solutions that automate complex workflows, boost efficiency, and foster human connection.
+
+          <p className="hero-sub">
+            From automation to advanced predictive systems, we help
+            companies unlock real value with AI that fits their goals.
           </p>
-          <div className="warm-cta-group">
-            <a href="#contact" className="btn-warm-primary">Start Your Transformation</a>
-            <a href="#services" className="btn-warm-outline">Explore Our Solutions</a>
+
+          {/* 3 feature cards */}
+          <div className="hero-cards">
+            {features.map((f, i) => (
+              <div className="hero-feat-card" key={i}>
+                <div className="hfc-arrow">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M7 17L17 7M17 7H7M17 7v10"/>
+                  </svg>
+                </div>
+                <h3>{f.title}</h3>
+                <p>{f.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* CTA */}
+          <div className="hero-actions">
+            <a href="#contact" className="hero-btn-primary">
+              Book a Free Consultation
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+            <a href="/about" className="hero-btn-ghost">Learn About Us →</a>
           </div>
         </div>
 
-        {/* ── RIGHT: visual panel ── */}
-        <div className="hero-visual-panel">
+        {/* ── RIGHT: Three.js animated scene ── */}
+        <div className="hero-right" aria-hidden="true">
+          <div className="hero-canvas-wrap">
+            <Suspense fallback={null}>
+              <HeroScene />
+            </Suspense>
+          </div>
 
-          {/* main dashboard card */}
-          <div className="hv-card hv-card-main">
-            <div className="hv-card-topbar">
-              <div className="hv-dots">
-                <span className="hv-dot red"></span>
-                <span className="hv-dot yellow"></span>
-                <span className="hv-dot green"></span>
-              </div>
-              <span className="hv-card-title">AI Workflow Engine</span>
-            </div>
-            <div className="hv-bars">
-              {[88, 65, 92, 74, 55, 80].map((h, i) => (
-                <div key={i} className="hv-bar-wrap">
-                  <div className="hv-bar" style={{ height: `${h}%`, animationDelay: `${i * 0.1}s` }}></div>
+          {/* Social proof — bottom right */}
+          <div className="hero-social-proof">
+            <div className="sp-avatars">
+              {avatars.map((a, i) => (
+                <div className="sp-avatar" key={i} style={{ zIndex: avatars.length - i }}>
+                  {a}
                 </div>
               ))}
+              <div className="sp-avatar sp-avatar-plus">+</div>
             </div>
-            <div className="hv-card-footer">
-              <span className="hv-status-dot"></span>
-              <span>Processing 1,240 tasks / min</span>
-            </div>
-          </div>
-
-          {/* floating stat badges */}
-          <div className="hv-badge hv-badge-1">
-            <div className="hv-badge-icon">⚡</div>
-            <div>
-              <div className="hv-badge-num">98%</div>
-              <div className="hv-badge-label">Efficiency Gain</div>
+            <div className="sp-text">
+              <span className="sp-score">4.8 / 5</span>
+              <span className="sp-label">1.4k Client Satisfaction</span>
             </div>
           </div>
-
-          <div className="hv-badge hv-badge-2">
-            <div className="hv-badge-icon">🤖</div>
-            <div>
-              <div className="hv-badge-num">50+</div>
-              <div className="hv-badge-label">AI Workflows</div>
-            </div>
-          </div>
-
-          {/* secondary info card */}
-          <div className="hv-card hv-card-secondary">
-            <div className="hv-secondary-row">
-              <div className="hv-icon-circle blue">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-              </div>
-              <div>
-                <div className="hv-sec-title">Response Time</div>
-                <div className="hv-sec-val">↓ 3× faster</div>
-              </div>
-            </div>
-            <div className="hv-secondary-row">
-              <div className="hv-icon-circle teal">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-              </div>
-              <div>
-                <div className="hv-sec-title">Cost Savings</div>
-                <div className="hv-sec-val">↑ 40% avg</div>
-              </div>
-            </div>
-          </div>
-
-          {/* background glow */}
-          <div className="hv-glow"></div>
         </div>
 
       </div>

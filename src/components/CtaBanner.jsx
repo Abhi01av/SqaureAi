@@ -10,13 +10,13 @@ const CtaBanner = () => {
         <svg viewBox="0 0 1440 300" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <radialGradient id="ctaGrad" cx="50%" cy="50%" r="60%">
-              <stop offset="0%" stopColor="#185FA5" stopOpacity="0.3"/>
-              <stop offset="100%" stopColor="#042C53" stopOpacity="0"/>
+              <stop offset="0%" stopColor="#0a3bfe" stopOpacity="0.14"/>
+              <stop offset="100%" stopColor="#000" stopOpacity="0"/>
             </radialGradient>
           </defs>
           <rect width="1440" height="300" fill="url(#ctaGrad)"/>
-          <circle cx="200" cy="150" r="150" fill="#378ADD" opacity="0.05"/>
-          <circle cx="1240" cy="100" r="180" fill="#FF9900" opacity="0.04"/>
+          <circle cx="200" cy="150" r="200" fill="#7c3aed" opacity="0.05"/>
+          <circle cx="1240" cy="100" r="220" fill="#f59e0b" opacity="0.04"/>
         </svg>
       </div>
       <div className="container">

@@ -1,64 +1,52 @@
 .logo-wrapper {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   text-decoration: none;
-}
-
-.logo-img-container {
   flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  user-select: none;
 }
 
-.logo-img-small  { width: 34px; height: 34px; }
-.logo-img-medium { width: 60px; height: 60px; }
-.logo-img-large  { width: 80px; height: 80px; }
-
-.logo-img {
-  width: 100%;
-  height: 100%;
+/* Icon mark */
+.logo-mark {
   display: block;
   object-fit: contain;
-  filter: drop-shadow(0 0 6px rgba(0, 170, 255, 0.35)) saturate(1.3);
+  flex-shrink: 0;
 }
 
-/* Text beside the logo mark */
-.logo-text-container {
-  display: flex;
-  flex-direction: column;
-  line-height: 1;
-}
+.logo-mark-small  { width: 30px;  height: 30px;  }
+.logo-mark-medium { width: 48px;  height: 48px;  }
+.logo-mark-large  { width: 64px;  height: 64px;  }
 
+/* Company name */
 .logo-name {
   font-family: 'Inter', sans-serif;
-  font-size: 1.4em;
-  margin-bottom: 2px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  white-space: nowrap;
 }
 
-.logo-small  .logo-name { font-size: 16px; }
+.logo-small  .logo-name { font-size: 17px; }
 .logo-medium .logo-name { font-size: 26px; }
+.logo-large  .logo-name { font-size: 36px; }
 
-.navbar .n-dot { color: rgba(255, 255, 255, 0.90); }
-.navbar .n-sq  { color: #4da2ff; }
-
-.n-dot { color: var(--text-primary); font-weight: 300; letter-spacing: -0.5px; }
-.n-sq  { color: var(--electric-blue); font-weight: 800; letter-spacing: -0.3px; }
-
-.logo-sub {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.45em;
-  letter-spacing: 0.3em;
-  color: var(--text-muted);
-  font-weight: 600;
-  text-transform: uppercase;
+/* "dot" — light weight, muted */
+.logo-dot {
+  font-weight: 300;
+  color: var(--text-secondary);
 }
 
-.logo-small  .logo-sub { font-size: 6px; }
-.logo-medium .logo-sub { font-size: 8px; }
+/* "square" — bold, dark */
+.logo-sq {
+  font-weight: 800;
+  color: var(--text-primary);
+}
 
-/* Footer context */
-.footer .n-dot { color: rgba(255, 255, 255, 0.92); }
-.footer .n-sq  { color: rgba(255, 255, 255, 0.98); }
-.footer .logo-sub { color: rgba(255, 255, 255, 0.55); }
+/* On light backgrounds */
+.light-bg .logo-dot { color: var(--text-secondary); }
+.light-bg .logo-sq  { color: var(--text-primary); }
+
+/* Footer context — both near white */
+.footer .logo-dot { color: rgba(255,255,255,0.55); }
+.footer .logo-sq  { color: rgba(255,255,255,0.90); }

@@ -6,19 +6,33 @@ const steps = [
     num: "01",
     title: "Discovery & Strategy",
     desc: "We deep-dive into your business goals, data landscape, and existing infrastructure to craft an AI roadmap aligned with your objectives.",
-    icon: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+    icon: (
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <circle cx="11" cy="11" r="8"/>
+        <path d="m21 21-4.35-4.35"/>
+      </svg>
+    )
   },
   {
     num: "02",
     title: "AI Design & Development",
-    desc: "Our engineers build, train, and fine-tune AI models with rigorous testing cycles, ensuring precision, fairness, and performance at every step.",
-    icon: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+    desc: "Our engineers build, train, and fine-tune AI models with rigorous testing cycles, ensuring precision, performance, and fairness at every step.",
+    icon: (
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <polyline points="16 18 22 12 16 6"/>
+        <polyline points="8 6 2 12 8 18"/>
+      </svg>
+    )
   },
   {
     num: "03",
     title: "Deploy, Monitor & Scale",
     desc: "We handle production deployment on AWS, implement continuous monitoring, and scale your AI solutions as your business grows.",
-    icon: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+    icon: (
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+      </svg>
+    )
   }
 ];
 
@@ -44,7 +58,7 @@ const HowItWorks = () => {
               </div>
               {index < steps.length - 1 && (
                 <div className="step-connector">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="#378ADD">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M5 12h14M12 5l7 7-7 7"/>
                   </svg>
                 </div>

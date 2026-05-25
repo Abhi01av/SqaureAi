@@ -1,20 +1,18 @@
-import logoMark from '../assests/neww.svg';
+import logoMark from '../assests/Untitled design.svg';
 import './Logo.css';
 
-const Logo = ({ size = "medium", hideText = false }) => {
+const Logo = ({ size = 'medium' }) => {
   return (
     <div className={`logo-wrapper logo-${size}`}>
-      <div className={`logo-img-container logo-img-${size}`}>
-        <img src={logoMark} alt="Dot Square Automation" className="logo-img" />
+      <img
+        src={logoMark}
+        alt=""
+        className={`logo-mark logo-mark-${size}`}
+        aria-hidden="true"
+      />
+      <div className="logo-name">
+        <span className="logo-dot">dot</span><span className="logo-sq">square</span>
       </div>
-
-      {!hideText && (
-        <div className="logo-text-container">
-          <div className="logo-name">
-            <span className="n-dot">dot</span><span className="n-sq">square</span>
-          </div>
-        </div>
-      )}
     </div>
   );
 };
